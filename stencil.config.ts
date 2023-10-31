@@ -9,6 +9,14 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
+      //coppying assets folder at dist after building but its not rendering image after build
+      copy: [
+        {
+          src: '**/*.{jpg,png}',
+          dest: 'dist/components/assets',
+          warn: true,
+        }
+      ]
     },
     {
       type: 'docs-readme',

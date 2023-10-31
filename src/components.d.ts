@@ -6,56 +6,79 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface FeaturesSection {
+    }
+    interface FooterSection {
+    }
+    interface HeroSection {
+    }
+    interface MyNav {
+        "firstHref": string;
+        "firstOption": string;
+        "secondHref": string;
+        "secondOption": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLFeaturesSectionElement extends Components.FeaturesSection, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLFeaturesSectionElement: {
+        prototype: HTMLFeaturesSectionElement;
+        new (): HTMLFeaturesSectionElement;
+    };
+    interface HTMLFooterSectionElement extends Components.FooterSection, HTMLStencilElement {
+    }
+    var HTMLFooterSectionElement: {
+        prototype: HTMLFooterSectionElement;
+        new (): HTMLFooterSectionElement;
+    };
+    interface HTMLHeroSectionElement extends Components.HeroSection, HTMLStencilElement {
+    }
+    var HTMLHeroSectionElement: {
+        prototype: HTMLHeroSectionElement;
+        new (): HTMLHeroSectionElement;
+    };
+    interface HTMLMyNavElement extends Components.MyNav, HTMLStencilElement {
+    }
+    var HTMLMyNavElement: {
+        prototype: HTMLMyNavElement;
+        new (): HTMLMyNavElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "features-section": HTMLFeaturesSectionElement;
+        "footer-section": HTMLFooterSectionElement;
+        "hero-section": HTMLHeroSectionElement;
+        "my-nav": HTMLMyNavElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface FeaturesSection {
+    }
+    interface FooterSection {
+    }
+    interface HeroSection {
+    }
+    interface MyNav {
+        "firstHref"?: string;
+        "firstOption"?: string;
+        "secondHref"?: string;
+        "secondOption"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "features-section": FeaturesSection;
+        "footer-section": FooterSection;
+        "hero-section": HeroSection;
+        "my-nav": MyNav;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "features-section": LocalJSX.FeaturesSection & JSXBase.HTMLAttributes<HTMLFeaturesSectionElement>;
+            "footer-section": LocalJSX.FooterSection & JSXBase.HTMLAttributes<HTMLFooterSectionElement>;
+            "hero-section": LocalJSX.HeroSection & JSXBase.HTMLAttributes<HTMLHeroSectionElement>;
+            "my-nav": LocalJSX.MyNav & JSXBase.HTMLAttributes<HTMLMyNavElement>;
         }
     }
 }
