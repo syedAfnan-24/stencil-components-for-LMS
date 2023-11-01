@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-
+import { href } from 'stencil-router-v2';
 @Component({
   tag: 'footer-section',
   styleUrl: 'footer-section.css',
@@ -8,12 +8,13 @@ import { Component, h } from '@stencil/core';
 export class FooterSection {
 
   render() {
-    return (
+    let x = (
       <div>
         <p id='copy-rights'>&copy; 2023 Library. All rights reserved.</p>
-        <p id='sub-para'>are you the admin? <a href="adminLogin.html">Login here</a></p>
+        <p id='sub-para'>are you the admin? <a {...href("/login")}>Login here</a></p>
       </div>
-    );
+    )
+    return x;
   }
 
 }

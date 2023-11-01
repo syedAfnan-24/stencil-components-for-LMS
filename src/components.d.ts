@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ClientLogin {
+    }
     interface FeaturesSection {
     }
     interface FooterSection {
@@ -18,8 +20,16 @@ export namespace Components {
         "secondHref": string;
         "secondOption": string;
     }
+    interface RootApp {
+    }
 }
 declare global {
+    interface HTMLClientLoginElement extends Components.ClientLogin, HTMLStencilElement {
+    }
+    var HTMLClientLoginElement: {
+        prototype: HTMLClientLoginElement;
+        new (): HTMLClientLoginElement;
+    };
     interface HTMLFeaturesSectionElement extends Components.FeaturesSection, HTMLStencilElement {
     }
     var HTMLFeaturesSectionElement: {
@@ -44,14 +54,24 @@ declare global {
         prototype: HTMLMyNavElement;
         new (): HTMLMyNavElement;
     };
+    interface HTMLRootAppElement extends Components.RootApp, HTMLStencilElement {
+    }
+    var HTMLRootAppElement: {
+        prototype: HTMLRootAppElement;
+        new (): HTMLRootAppElement;
+    };
     interface HTMLElementTagNameMap {
+        "client-login": HTMLClientLoginElement;
         "features-section": HTMLFeaturesSectionElement;
         "footer-section": HTMLFooterSectionElement;
         "hero-section": HTMLHeroSectionElement;
         "my-nav": HTMLMyNavElement;
+        "root-app": HTMLRootAppElement;
     }
 }
 declare namespace LocalJSX {
+    interface ClientLogin {
+    }
     interface FeaturesSection {
     }
     interface FooterSection {
@@ -64,21 +84,27 @@ declare namespace LocalJSX {
         "secondHref"?: string;
         "secondOption"?: string;
     }
+    interface RootApp {
+    }
     interface IntrinsicElements {
+        "client-login": ClientLogin;
         "features-section": FeaturesSection;
         "footer-section": FooterSection;
         "hero-section": HeroSection;
         "my-nav": MyNav;
+        "root-app": RootApp;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "client-login": LocalJSX.ClientLogin & JSXBase.HTMLAttributes<HTMLClientLoginElement>;
             "features-section": LocalJSX.FeaturesSection & JSXBase.HTMLAttributes<HTMLFeaturesSectionElement>;
             "footer-section": LocalJSX.FooterSection & JSXBase.HTMLAttributes<HTMLFooterSectionElement>;
             "hero-section": LocalJSX.HeroSection & JSXBase.HTMLAttributes<HTMLHeroSectionElement>;
             "my-nav": LocalJSX.MyNav & JSXBase.HTMLAttributes<HTMLMyNavElement>;
+            "root-app": LocalJSX.RootApp & JSXBase.HTMLAttributes<HTMLRootAppElement>;
         }
     }
 }

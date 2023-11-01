@@ -1,4 +1,5 @@
 import { Component, Prop, State, h } from "@stencil/core";
+import { href } from "stencil-router-v2";
 
 @Component({
     tag: "my-nav",
@@ -29,7 +30,7 @@ export class MyNavBar {
                 <div class="dropdown-menu">
                     <div class="menu-toggle" onClick={() => { this.toggleBool = false }}>
                         <p id="cross">X</p><br />
-                        <a id="nav-link-dropdown" href={this.firstHref}>{this.firstOption}</a>
+                        <a id="nav-link-dropdown" {...href(this.firstHref)}>{this.firstOption}</a>
                         <a id="nav-link-dropdown" href={this.secondHref}>{this.secondOption}</a>
                     </div>
                 </div>)
