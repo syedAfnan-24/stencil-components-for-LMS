@@ -6,7 +6,17 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AdminHome {
+    }
+    interface AdminLogin {
+    }
+    interface AdminSignup {
+    }
+    interface ClientHome {
+    }
     interface ClientLogin {
+    }
+    interface ClientSignup {
     }
     interface FeaturesSection {
     }
@@ -17,6 +27,7 @@ export namespace Components {
     interface MyNav {
         "firstHref": string;
         "firstOption": string;
+        "logOut": string;
         "secondHref": string;
         "secondOption": string;
     }
@@ -24,11 +35,41 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAdminHomeElement extends Components.AdminHome, HTMLStencilElement {
+    }
+    var HTMLAdminHomeElement: {
+        prototype: HTMLAdminHomeElement;
+        new (): HTMLAdminHomeElement;
+    };
+    interface HTMLAdminLoginElement extends Components.AdminLogin, HTMLStencilElement {
+    }
+    var HTMLAdminLoginElement: {
+        prototype: HTMLAdminLoginElement;
+        new (): HTMLAdminLoginElement;
+    };
+    interface HTMLAdminSignupElement extends Components.AdminSignup, HTMLStencilElement {
+    }
+    var HTMLAdminSignupElement: {
+        prototype: HTMLAdminSignupElement;
+        new (): HTMLAdminSignupElement;
+    };
+    interface HTMLClientHomeElement extends Components.ClientHome, HTMLStencilElement {
+    }
+    var HTMLClientHomeElement: {
+        prototype: HTMLClientHomeElement;
+        new (): HTMLClientHomeElement;
+    };
     interface HTMLClientLoginElement extends Components.ClientLogin, HTMLStencilElement {
     }
     var HTMLClientLoginElement: {
         prototype: HTMLClientLoginElement;
         new (): HTMLClientLoginElement;
+    };
+    interface HTMLClientSignupElement extends Components.ClientSignup, HTMLStencilElement {
+    }
+    var HTMLClientSignupElement: {
+        prototype: HTMLClientSignupElement;
+        new (): HTMLClientSignupElement;
     };
     interface HTMLFeaturesSectionElement extends Components.FeaturesSection, HTMLStencilElement {
     }
@@ -61,7 +102,12 @@ declare global {
         new (): HTMLRootAppElement;
     };
     interface HTMLElementTagNameMap {
+        "admin-home": HTMLAdminHomeElement;
+        "admin-login": HTMLAdminLoginElement;
+        "admin-signup": HTMLAdminSignupElement;
+        "client-home": HTMLClientHomeElement;
         "client-login": HTMLClientLoginElement;
+        "client-signup": HTMLClientSignupElement;
         "features-section": HTMLFeaturesSectionElement;
         "footer-section": HTMLFooterSectionElement;
         "hero-section": HTMLHeroSectionElement;
@@ -70,7 +116,17 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AdminHome {
+    }
+    interface AdminLogin {
+    }
+    interface AdminSignup {
+    }
+    interface ClientHome {
+    }
     interface ClientLogin {
+    }
+    interface ClientSignup {
     }
     interface FeaturesSection {
     }
@@ -81,13 +137,19 @@ declare namespace LocalJSX {
     interface MyNav {
         "firstHref"?: string;
         "firstOption"?: string;
+        "logOut"?: string;
         "secondHref"?: string;
         "secondOption"?: string;
     }
     interface RootApp {
     }
     interface IntrinsicElements {
+        "admin-home": AdminHome;
+        "admin-login": AdminLogin;
+        "admin-signup": AdminSignup;
+        "client-home": ClientHome;
         "client-login": ClientLogin;
+        "client-signup": ClientSignup;
         "features-section": FeaturesSection;
         "footer-section": FooterSection;
         "hero-section": HeroSection;
@@ -99,7 +161,12 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "admin-home": LocalJSX.AdminHome & JSXBase.HTMLAttributes<HTMLAdminHomeElement>;
+            "admin-login": LocalJSX.AdminLogin & JSXBase.HTMLAttributes<HTMLAdminLoginElement>;
+            "admin-signup": LocalJSX.AdminSignup & JSXBase.HTMLAttributes<HTMLAdminSignupElement>;
+            "client-home": LocalJSX.ClientHome & JSXBase.HTMLAttributes<HTMLClientHomeElement>;
             "client-login": LocalJSX.ClientLogin & JSXBase.HTMLAttributes<HTMLClientLoginElement>;
+            "client-signup": LocalJSX.ClientSignup & JSXBase.HTMLAttributes<HTMLClientSignupElement>;
             "features-section": LocalJSX.FeaturesSection & JSXBase.HTMLAttributes<HTMLFeaturesSectionElement>;
             "footer-section": LocalJSX.FooterSection & JSXBase.HTMLAttributes<HTMLFooterSectionElement>;
             "hero-section": LocalJSX.HeroSection & JSXBase.HTMLAttributes<HTMLHeroSectionElement>;

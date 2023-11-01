@@ -13,9 +13,13 @@ export class MyNavBar {
     @Prop() firstHref:string
     @Prop() secondOption: string
     @Prop() secondHref:string
+    @Prop() logOut: string
     @State() toggleBool: boolean = false
-    render() {
 
+    logoutFunc(){
+        sessionStorage.clear(); window.location.href='/'
+    }
+    render() {
         //three bars toggle button
         let mobileToggle = (<div class="menu-toggle" onClick={() => { this.toggleBool = true }}>
             <span class="bar"></span>
@@ -31,7 +35,8 @@ export class MyNavBar {
                     <div class="menu-toggle" onClick={() => { this.toggleBool = false }}>
                         <p id="cross">X</p><br />
                         <a id="nav-link-dropdown" {...href(this.firstHref)}>{this.firstOption}</a>
-                        <a id="nav-link-dropdown" href={this.secondHref}>{this.secondOption}</a>
+                        <a id="nav-link-dropdown" {...href(this.secondHref)}>{this.secondOption}</a>
+                        <a id="nav-link-dropdown" onClick={this.logoutFunc.bind(this)}>{this.logOut}</a>
                     </div>
                 </div>)
         }
@@ -43,6 +48,7 @@ export class MyNavBar {
             <div class="menu">
                 <a id="nav-link" href={this.firstHref}>{this.firstOption}</a>
                 <a id="nav-link" href={this.secondHref}>{this.secondOption}</a>
+                <a id="nav-link-dropdown" onClick={this.logoutFunc.bind(this)}>{this.logOut}</a>
             </div>
             {dropdownMenu}
         </nav>)

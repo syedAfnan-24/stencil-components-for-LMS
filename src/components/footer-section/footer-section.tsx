@@ -11,7 +11,7 @@ export class FooterSection {
     let x = (
       <div>
         <p id='copy-rights'>&copy; 2023 Library. All rights reserved.</p>
-        <p id='sub-para'>are you the admin? <a {...href("/login")}>Login here</a></p>
+        <p id='sub-para'>are you the admin? <a {...href("/admin-login")}>Login here</a></p>
       </div>
     )
     return x;

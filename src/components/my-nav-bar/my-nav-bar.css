@@ -38,10 +38,10 @@
 .dropdown-menu {
     position: fixed; /* Fixed positioning to keep it in the viewport */
     top: 60; /*Position at the top of the viewport*/
-    margin-top: 100px;
+    margin: 150px 10px 0 0;
     right: 0; /* Position at the left of the viewport */
     z-index: 9999; /* Set a high z-index value to appear above other elements */
-    background-color: #1c1c1cb3; /* Background color for the dropdown menu */
+    background-color: #1c1c1cd9; /* Background color for the dropdown menu */
     padding: 10px; /* Add padding for the content inside the dropdown menu */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.733); /* Add a box shadow for a subtle elevation effect */
     display: none;
@@ -69,7 +69,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin:0 10px 5px;
+    margin:5px 10px 5px;
 }
 
 
