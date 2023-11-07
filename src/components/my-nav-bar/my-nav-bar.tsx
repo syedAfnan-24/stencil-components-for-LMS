@@ -17,7 +17,8 @@ export class MyNavBar {
     @State() toggleBool: boolean = false
 
     logoutFunc(){
-        sessionStorage.clear(); window.location.href='/'
+        sessionStorage.clear(); 
+        window.location.href='/'
     }
     render() {
         //three bars toggle button

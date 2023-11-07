@@ -12,9 +12,13 @@ export namespace Components {
     }
     interface AdminSignup {
     }
+    interface ClientBorrow {
+    }
     interface ClientHome {
     }
     interface ClientLogin {
+    }
+    interface ClientReturn {
     }
     interface ClientSignup {
     }
@@ -53,6 +57,12 @@ declare global {
         prototype: HTMLAdminSignupElement;
         new (): HTMLAdminSignupElement;
     };
+    interface HTMLClientBorrowElement extends Components.ClientBorrow, HTMLStencilElement {
+    }
+    var HTMLClientBorrowElement: {
+        prototype: HTMLClientBorrowElement;
+        new (): HTMLClientBorrowElement;
+    };
     interface HTMLClientHomeElement extends Components.ClientHome, HTMLStencilElement {
     }
     var HTMLClientHomeElement: {
@@ -64,6 +74,12 @@ declare global {
     var HTMLClientLoginElement: {
         prototype: HTMLClientLoginElement;
         new (): HTMLClientLoginElement;
+    };
+    interface HTMLClientReturnElement extends Components.ClientReturn, HTMLStencilElement {
+    }
+    var HTMLClientReturnElement: {
+        prototype: HTMLClientReturnElement;
+        new (): HTMLClientReturnElement;
     };
     interface HTMLClientSignupElement extends Components.ClientSignup, HTMLStencilElement {
     }
@@ -105,8 +121,10 @@ declare global {
         "admin-home": HTMLAdminHomeElement;
         "admin-login": HTMLAdminLoginElement;
         "admin-signup": HTMLAdminSignupElement;
+        "client-borrow": HTMLClientBorrowElement;
         "client-home": HTMLClientHomeElement;
         "client-login": HTMLClientLoginElement;
+        "client-return": HTMLClientReturnElement;
         "client-signup": HTMLClientSignupElement;
         "features-section": HTMLFeaturesSectionElement;
         "footer-section": HTMLFooterSectionElement;
@@ -122,9 +140,13 @@ declare namespace LocalJSX {
     }
     interface AdminSignup {
     }
+    interface ClientBorrow {
+    }
     interface ClientHome {
     }
     interface ClientLogin {
+    }
+    interface ClientReturn {
     }
     interface ClientSignup {
     }
@@ -147,8 +169,10 @@ declare namespace LocalJSX {
         "admin-home": AdminHome;
         "admin-login": AdminLogin;
         "admin-signup": AdminSignup;
+        "client-borrow": ClientBorrow;
         "client-home": ClientHome;
         "client-login": ClientLogin;
+        "client-return": ClientReturn;
         "client-signup": ClientSignup;
         "features-section": FeaturesSection;
         "footer-section": FooterSection;
@@ -164,8 +188,10 @@ declare module "@stencil/core" {
             "admin-home": LocalJSX.AdminHome & JSXBase.HTMLAttributes<HTMLAdminHomeElement>;
             "admin-login": LocalJSX.AdminLogin & JSXBase.HTMLAttributes<HTMLAdminLoginElement>;
             "admin-signup": LocalJSX.AdminSignup & JSXBase.HTMLAttributes<HTMLAdminSignupElement>;
+            "client-borrow": LocalJSX.ClientBorrow & JSXBase.HTMLAttributes<HTMLClientBorrowElement>;
             "client-home": LocalJSX.ClientHome & JSXBase.HTMLAttributes<HTMLClientHomeElement>;
             "client-login": LocalJSX.ClientLogin & JSXBase.HTMLAttributes<HTMLClientLoginElement>;
+            "client-return": LocalJSX.ClientReturn & JSXBase.HTMLAttributes<HTMLClientReturnElement>;
             "client-signup": LocalJSX.ClientSignup & JSXBase.HTMLAttributes<HTMLClientSignupElement>;
             "features-section": LocalJSX.FeaturesSection & JSXBase.HTMLAttributes<HTMLFeaturesSectionElement>;
             "footer-section": LocalJSX.FooterSection & JSXBase.HTMLAttributes<HTMLFooterSectionElement>;

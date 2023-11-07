@@ -15,7 +15,7 @@ export class RootApp {
           <my-nav first-option="Login" first-href="/login" second-option="SignUp" second-href="/signup"></my-nav>
           <hero-section></hero-section>
           <features-section></features-section>
-          <footer-section></footer-section>
+          <footer-section />
         </Route>
         {/* login page */}
         <Route path='/login'>
@@ -29,7 +29,7 @@ export class RootApp {
         </Route>
         {/* client home page */}
         <Route path="/home">
-          <my-nav log-out='Log Out'></my-nav>
+          <my-nav first-option="Borrowed" first-href="/client-borrowed" second-option="Rerturned" second-href="/client-returned" log-out='Log Out'></my-nav>
           <client-home></client-home>
         </Route>
         {/* admin login  */}
@@ -47,6 +47,17 @@ export class RootApp {
           <my-nav log-out='Log Out'></my-nav>
           <admin-home></admin-home>
         </Route>
+        {/* page for rendering the books borrowed by client */}
+        <Route path='/client-borrowed'>
+          <my-nav first-option="Dashboard" first-href="/home" second-option="Rerturned" second-href="/client-returned" log-out='Log Out'></my-nav>
+          <client-borrow></client-borrow>
+        </Route>
+        {/* page for rendering the books Returned by client */}
+        <Route path='/client-returned'>
+          <my-nav first-option="Dashboard" first-href="/home" second-option="Borrowed" second-href="/client-borrowed" log-out='Log Out'></my-nav>
+          <client-return></client-return>
+        </Route>
+
       </Router.Switch>
     );
   }
