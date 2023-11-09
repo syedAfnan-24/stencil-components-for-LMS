@@ -6,9 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AdminBorrow {
+    }
     interface AdminHome {
     }
     interface AdminLogin {
+    }
+    interface AdminReturn {
     }
     interface AdminSignup {
     }
@@ -39,6 +43,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAdminBorrowElement extends Components.AdminBorrow, HTMLStencilElement {
+    }
+    var HTMLAdminBorrowElement: {
+        prototype: HTMLAdminBorrowElement;
+        new (): HTMLAdminBorrowElement;
+    };
     interface HTMLAdminHomeElement extends Components.AdminHome, HTMLStencilElement {
     }
     var HTMLAdminHomeElement: {
@@ -50,6 +60,12 @@ declare global {
     var HTMLAdminLoginElement: {
         prototype: HTMLAdminLoginElement;
         new (): HTMLAdminLoginElement;
+    };
+    interface HTMLAdminReturnElement extends Components.AdminReturn, HTMLStencilElement {
+    }
+    var HTMLAdminReturnElement: {
+        prototype: HTMLAdminReturnElement;
+        new (): HTMLAdminReturnElement;
     };
     interface HTMLAdminSignupElement extends Components.AdminSignup, HTMLStencilElement {
     }
@@ -118,8 +134,10 @@ declare global {
         new (): HTMLRootAppElement;
     };
     interface HTMLElementTagNameMap {
+        "admin-borrow": HTMLAdminBorrowElement;
         "admin-home": HTMLAdminHomeElement;
         "admin-login": HTMLAdminLoginElement;
+        "admin-return": HTMLAdminReturnElement;
         "admin-signup": HTMLAdminSignupElement;
         "client-borrow": HTMLClientBorrowElement;
         "client-home": HTMLClientHomeElement;
@@ -134,9 +152,13 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AdminBorrow {
+    }
     interface AdminHome {
     }
     interface AdminLogin {
+    }
+    interface AdminReturn {
     }
     interface AdminSignup {
     }
@@ -166,8 +188,10 @@ declare namespace LocalJSX {
     interface RootApp {
     }
     interface IntrinsicElements {
+        "admin-borrow": AdminBorrow;
         "admin-home": AdminHome;
         "admin-login": AdminLogin;
+        "admin-return": AdminReturn;
         "admin-signup": AdminSignup;
         "client-borrow": ClientBorrow;
         "client-home": ClientHome;
@@ -185,8 +209,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "admin-borrow": LocalJSX.AdminBorrow & JSXBase.HTMLAttributes<HTMLAdminBorrowElement>;
             "admin-home": LocalJSX.AdminHome & JSXBase.HTMLAttributes<HTMLAdminHomeElement>;
             "admin-login": LocalJSX.AdminLogin & JSXBase.HTMLAttributes<HTMLAdminLoginElement>;
+            "admin-return": LocalJSX.AdminReturn & JSXBase.HTMLAttributes<HTMLAdminReturnElement>;
             "admin-signup": LocalJSX.AdminSignup & JSXBase.HTMLAttributes<HTMLAdminSignupElement>;
             "client-borrow": LocalJSX.ClientBorrow & JSXBase.HTMLAttributes<HTMLClientBorrowElement>;
             "client-home": LocalJSX.ClientHome & JSXBase.HTMLAttributes<HTMLClientHomeElement>;

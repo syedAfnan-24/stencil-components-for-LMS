@@ -13,24 +13,24 @@ export class RootApp {
         {/* landing page */}
         <Route path="/">
           <my-nav first-option="Login" first-href="/login" second-option="SignUp" second-href="/signup"></my-nav>
-          <hero-section></hero-section>
-          <features-section></features-section>
+          <hero-section />
+          <features-section />
           <footer-section />
         </Route>
         {/* login page */}
         <Route path='/login'>
           <my-nav first-option="Home" first-href="/" second-option="SignUp" second-href="/signup"></my-nav>
-          <client-login></client-login>
+          <client-login />
         </Route>
         {/* signup page */}
         <Route path='/signup'>
           <my-nav first-option="Home" first-href="/" second-option="Login" second-href="/login"></my-nav>
-          <client-signup></client-signup>
+          <client-signup />
         </Route>
         {/* client home page */}
         <Route path="/home">
           <my-nav first-option="Borrowed" first-href="/client-borrowed" second-option="Rerturned" second-href="/client-returned" log-out='Log Out'></my-nav>
-          <client-home></client-home>
+          <client-home />
         </Route>
         {/* admin login  */}
         <Route path='/admin-login'>
@@ -44,7 +44,7 @@ export class RootApp {
         </Route>
         {/* admin home page */}
         <Route path="/controlls">
-          <my-nav log-out='Log Out'></my-nav>
+          <my-nav first-option="Borrowed" first-href="/admin-borrow" second-option="Returned" second-href="/admin-return" log-out='Log Out'></my-nav>
           <admin-home></admin-home>
         </Route>
         {/* page for rendering the books borrowed by client */}
@@ -58,8 +58,17 @@ export class RootApp {
           <client-return></client-return>
         </Route>
 
+        <Route path='/admin-borrow'>
+          <my-nav first-option="Dashboard" first-href="/controlls" second-option="Returned" second-href="/admin-return" log-out='Log Out'></my-nav>
+          <admin-borrow></admin-borrow>
+        </Route>
+
+        <Route path='/admin-return'>
+          <my-nav first-option="Dashboard" first-href="/controlls" second-option="Borrowed" second-href="/admin-borrow" log-out='Log Out'></my-nav>
+          <admin-return></admin-return>
+        </Route>
+
       </Router.Switch>
     );
   }
-
 }

@@ -76,6 +76,11 @@ export class ClientBorrow {
       this.saveToReturns()
       this.borrows = this.borrows.filter(item => item.id !== id || item.username !== this.name)
       this.saveToBorrows()
+      if(fine==0){
+        alert("book:\'"+bookname+"\'returned on time");
+      }else{
+        alert("book:\'"+bookname+"\'returned with due of "+(days-7)+", fine: Rs."+fine)
+      }
     }
 
   }

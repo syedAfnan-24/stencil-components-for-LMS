@@ -1,7 +1,5 @@
 import { Component, h, Element, State } from "@stencil/core";
 import { Book } from "./book-interface";
-import { Borrow } from "./borrow-iterface";
-import { Return } from "./return-interface";
 
 @Component({
     tag: "admin-home",
@@ -16,7 +14,6 @@ export class AdminHome {
     year: HTMLInputElement
     numberdays: HTMLInputElement
 
-    @State() bookListState: boolean = false
     @State() borrowListState: boolean = false
     @State() returnListState: boolean = false
 
@@ -25,21 +22,12 @@ export class AdminHome {
     //array initialization and declaration
 
     books: Book[] = []
-    borrows: Borrow[] = []
-    returns: Return[] = []
+    // returns: Return[] = []
 
     componentWillLoad() {
         const storedBooks = localStorage.getItem('books');
-        const storedBorrows = localStorage.getItem('borrow');
-        const booksReturned = localStorage.getItem('returned')
         if (storedBooks) {
             this.books = JSON.parse(storedBooks);
-        }
-        if (storedBorrows) {
-            this.borrows = JSON.parse(storedBorrows);
-        }
-        if (booksReturned) {
-            this.returns = JSON.parse(booksReturned)
         }
     }
 
@@ -51,7 +39,7 @@ export class AdminHome {
         const authorName: string = this.authorname.value
         const year: string = this.year.value
         const amt: number = +this.numberdays.value
-        if (bookName && authorName && year && amt>0) {
+        if (bookName && authorName && year && amt > 0) {
             const newBook: Book = {
                 id: this.books.length + 1,
                 title: bookName,
@@ -96,9 +84,8 @@ export class AdminHome {
 
     renderBooks() {
         let heading = <h2>Books List</h2>
-        let bookListDisp
-        if (this.bookListState) {
-            bookListDisp = (
+        return (
+            <div class="Booktable">
                 <div>
                     {heading}
                     <table>
@@ -126,94 +113,53 @@ export class AdminHome {
                         </tbody>
                     </table>
                 </div>
-            )
-        }
-        return (
-            <div class="Booktable">
-                {bookListDisp}
             </div>
         )
 
     }
 
-    renderBorrows() {
-        let heading = <h2>Borrowed Books List</h2>
-        let borrowListDisp
-        if (this.borrowListState) {
-            borrowListDisp = (
-                <div>
-                    {heading}
-                    <table>
-                        <thead>
-                            <th>ID</th>
-                            <th>Student Name</th>
-                            <th>Book Name</th>
-                            <th>No. Days</th>
-                            <th>Borrow Date</th>
-                        </thead>
-                        <tbody>
-                            {this.borrows.map(item => (
-                                <tr key={item.id}>
-                                    <td>{item.id}</td>
-                                    <td>{item.username}</td>
-                                    <td>{item.bookname}</td>
-                                    <td>{item.days}</td>
-                                    <td>{item.borrowdate}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            )
-        }
-        return (
-            <div class="Booktable">
-                {borrowListDisp}
-            </div>
-        )
 
-    }
 
-    //renders the books that are returned
-    renderReturns() {
-        let headingLOB = <h2>List of books Returned</h2>
-        let listOfBorrow
-        if (this.returnListState) {
-            listOfBorrow = (
-                <div>
-                    {headingLOB}
-                    <table>
-                        <thead>
-                            <th>ID</th>
-                            <th>Book Name</th>
-                            <th>Returned By</th>
-                            <th>Borrowed Date</th>
-                            <th>Returned Date</th>
-                            <th>Fine</th>
-                        </thead>
-                        <tbody>
-                            {this.returns.map(item => (
-                                <tr key={item.id}>
-                                    <td>{item.id}</td>
-                                    <td>{item.bookname}</td>
-                                    <td>{item.username}</td>
-                                    <td>{item.bdate}</td>
-                                    <td>{item.rdate}</td>
-                                    <td>{item.fine}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>)
-        }
-        return <div class="Booktable">{listOfBorrow}</div>
-    }
+    // //renders the books that are returned
+    // renderReturns() {
+    //     let headingLOB = <h2>List of books Returned</h2>
+    //     let listOfBorrow
+    //     if (this.returnListState) {
+    //         listOfBorrow = (
+    //             <div>
+    //                 {headingLOB}
+    //                 <table>
+    //                     <thead>
+    //                         <th>ID</th>
+    //                         <th>Book Name</th>
+    //                         <th>Returned By</th>
+    //                         <th>Borrowed Date</th>
+    //                         <th>Returned Date</th>
+    //                         <th>Fine</th>
+    //                     </thead>
+    //                     <tbody>
+    //                         {this.returns.map(item => (
+    //                             <tr key={item.id}>
+    //                                 <td>{item.id}</td>
+    //                                 <td>{item.bookname}</td>
+    //                                 <td>{item.username}</td>
+    //                                 <td>{item.bdate}</td>
+    //                                 <td>{item.rdate}</td>
+    //                                 <td>{item.fine}</td>
+    //                             </tr>
+    //                         ))}
+    //                     </tbody>
+    //                 </table>
+    //             </div>)
+    //     }
+    //     return <div class="Booktable">{listOfBorrow}</div>
+    // }
 
     render() {
-        console.log(this.books)
 
         let BookForm = (
             <div>
+                <h1>hello {this.greetAdmin}</h1>
                 <form onSubmit={this.handleForm.bind(this)}>
                     <label htmlFor="bookname">Name of Book</label>
                     <input type="text" id="bookname" ref={el => { this.bookname = el }} placeholder="Enter the Book Name" required />
@@ -233,17 +179,13 @@ export class AdminHome {
             </div>
         )
         return <div class="container">
-            <h1>hello {this.greetAdmin}</h1>
+            
             {BookForm}
-            <div class="btn-div">
-                <button onClick={() => { this.bookListState = true; this.borrowListState = false; this.returnListState = false }}>List of Books</button>
-                <button onClick={() => { this.bookListState = false; this.borrowListState = true; this.returnListState = false }}>Borrowed Books</button>
-                <button onClick={() => { this.bookListState = false; this.borrowListState = false; this.returnListState = true }}>Returned Books</button>
-            </div>
 
-            {this.renderBooks()}
-            {this.renderBorrows()}
-            {this.renderReturns()}
+            <div>
+                {this.renderBooks()}
+            </div>
+            {/* {this.renderReturns()} */}
         </div>
     }
 }

@@ -63,6 +63,7 @@ export class ClientHome {
                 this.borrows.push(newBorrow)
                 this.saveToBorrows()
                 this.saveToLocalStorage()
+                alert("borrowed book: "+bookName+" for: "+noDays+" days")
             }else{
                 alert("book not available")
             }
