@@ -1,4 +1,4 @@
-# hero-section
+# client-borrow
 
 
 
@@ -14,8 +14,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  root-app --> hero-section
-  style hero-section fill:#f9f,stroke:#333,stroke-width:4px
+  root-app --> client-borrow
+  style client-borrow fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

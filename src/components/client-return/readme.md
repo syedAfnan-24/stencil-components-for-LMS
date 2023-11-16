@@ -1,4 +1,4 @@
-# hero-section
+# client-return
 
 
 
@@ -14,8 +14,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  root-app --> hero-section
-  style hero-section fill:#f9f,stroke:#333,stroke-width:4px
+  root-app --> client-return
+  style client-return fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
