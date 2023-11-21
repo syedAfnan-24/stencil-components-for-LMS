@@ -44,7 +44,7 @@ export class MyNavBar {
 
         //Main Navigation Bar
         let navBar = (<nav class="navbar">
-            <div class="logo">Library</div>
+            <div class="logo">LIBRARY</div>
             {mobileToggle}
             <div class="menu">
                 <a id="nav-link" href={this.firstHref}>{this.firstOption}</a>

@@ -119,42 +119,6 @@ export class AdminHome {
     }
 
 
-
-    // //renders the books that are returned
-    // renderReturns() {
-    //     let headingLOB = <h2>List of books Returned</h2>
-    //     let listOfBorrow
-    //     if (this.returnListState) {
-    //         listOfBorrow = (
-    //             <div>
-    //                 {headingLOB}
-    //                 <table>
-    //                     <thead>
-    //                         <th>ID</th>
-    //                         <th>Book Name</th>
-    //                         <th>Returned By</th>
-    //                         <th>Borrowed Date</th>
-    //                         <th>Returned Date</th>
-    //                         <th>Fine</th>
-    //                     </thead>
-    //                     <tbody>
-    //                         {this.returns.map(item => (
-    //                             <tr key={item.id}>
-    //                                 <td>{item.id}</td>
-    //                                 <td>{item.bookname}</td>
-    //                                 <td>{item.username}</td>
-    //                                 <td>{item.bdate}</td>
-    //                                 <td>{item.rdate}</td>
-    //                                 <td>{item.fine}</td>
-    //                             </tr>
-    //                         ))}
-    //                     </tbody>
-    //                 </table>
-    //             </div>)
-    //     }
-    //     return <div class="Booktable">{listOfBorrow}</div>
-    // }
-
     render() {
 
         let BookForm = (
@@ -185,7 +149,6 @@ export class AdminHome {
             <div>
                 {this.renderBooks()}
             </div>
-            {/* {this.renderReturns()} */}
         </div>
     }
 }
