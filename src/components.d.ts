@@ -12,6 +12,8 @@ export namespace Components {
     }
     interface AdminLogin {
     }
+    interface AdminRequest {
+    }
     interface AdminReturn {
     }
     interface AdminSignup {
@@ -21,6 +23,8 @@ export namespace Components {
     interface ClientHome {
     }
     interface ClientLogin {
+    }
+    interface ClientRequest {
     }
     interface ClientReturn {
     }
@@ -61,6 +65,12 @@ declare global {
         prototype: HTMLAdminLoginElement;
         new (): HTMLAdminLoginElement;
     };
+    interface HTMLAdminRequestElement extends Components.AdminRequest, HTMLStencilElement {
+    }
+    var HTMLAdminRequestElement: {
+        prototype: HTMLAdminRequestElement;
+        new (): HTMLAdminRequestElement;
+    };
     interface HTMLAdminReturnElement extends Components.AdminReturn, HTMLStencilElement {
     }
     var HTMLAdminReturnElement: {
@@ -90,6 +100,12 @@ declare global {
     var HTMLClientLoginElement: {
         prototype: HTMLClientLoginElement;
         new (): HTMLClientLoginElement;
+    };
+    interface HTMLClientRequestElement extends Components.ClientRequest, HTMLStencilElement {
+    }
+    var HTMLClientRequestElement: {
+        prototype: HTMLClientRequestElement;
+        new (): HTMLClientRequestElement;
     };
     interface HTMLClientReturnElement extends Components.ClientReturn, HTMLStencilElement {
     }
@@ -137,11 +153,13 @@ declare global {
         "admin-borrow": HTMLAdminBorrowElement;
         "admin-home": HTMLAdminHomeElement;
         "admin-login": HTMLAdminLoginElement;
+        "admin-request": HTMLAdminRequestElement;
         "admin-return": HTMLAdminReturnElement;
         "admin-signup": HTMLAdminSignupElement;
         "client-borrow": HTMLClientBorrowElement;
         "client-home": HTMLClientHomeElement;
         "client-login": HTMLClientLoginElement;
+        "client-request": HTMLClientRequestElement;
         "client-return": HTMLClientReturnElement;
         "client-signup": HTMLClientSignupElement;
         "features-section": HTMLFeaturesSectionElement;
@@ -158,6 +176,8 @@ declare namespace LocalJSX {
     }
     interface AdminLogin {
     }
+    interface AdminRequest {
+    }
     interface AdminReturn {
     }
     interface AdminSignup {
@@ -167,6 +187,8 @@ declare namespace LocalJSX {
     interface ClientHome {
     }
     interface ClientLogin {
+    }
+    interface ClientRequest {
     }
     interface ClientReturn {
     }
@@ -191,11 +213,13 @@ declare namespace LocalJSX {
         "admin-borrow": AdminBorrow;
         "admin-home": AdminHome;
         "admin-login": AdminLogin;
+        "admin-request": AdminRequest;
         "admin-return": AdminReturn;
         "admin-signup": AdminSignup;
         "client-borrow": ClientBorrow;
         "client-home": ClientHome;
         "client-login": ClientLogin;
+        "client-request": ClientRequest;
         "client-return": ClientReturn;
         "client-signup": ClientSignup;
         "features-section": FeaturesSection;
@@ -212,11 +236,13 @@ declare module "@stencil/core" {
             "admin-borrow": LocalJSX.AdminBorrow & JSXBase.HTMLAttributes<HTMLAdminBorrowElement>;
             "admin-home": LocalJSX.AdminHome & JSXBase.HTMLAttributes<HTMLAdminHomeElement>;
             "admin-login": LocalJSX.AdminLogin & JSXBase.HTMLAttributes<HTMLAdminLoginElement>;
+            "admin-request": LocalJSX.AdminRequest & JSXBase.HTMLAttributes<HTMLAdminRequestElement>;
             "admin-return": LocalJSX.AdminReturn & JSXBase.HTMLAttributes<HTMLAdminReturnElement>;
             "admin-signup": LocalJSX.AdminSignup & JSXBase.HTMLAttributes<HTMLAdminSignupElement>;
             "client-borrow": LocalJSX.ClientBorrow & JSXBase.HTMLAttributes<HTMLClientBorrowElement>;
             "client-home": LocalJSX.ClientHome & JSXBase.HTMLAttributes<HTMLClientHomeElement>;
             "client-login": LocalJSX.ClientLogin & JSXBase.HTMLAttributes<HTMLClientLoginElement>;
+            "client-request": LocalJSX.ClientRequest & JSXBase.HTMLAttributes<HTMLClientRequestElement>;
             "client-return": LocalJSX.ClientReturn & JSXBase.HTMLAttributes<HTMLClientReturnElement>;
             "client-signup": LocalJSX.ClientSignup & JSXBase.HTMLAttributes<HTMLClientSignupElement>;
             "features-section": LocalJSX.FeaturesSection & JSXBase.HTMLAttributes<HTMLFeaturesSectionElement>;

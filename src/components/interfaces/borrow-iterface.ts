@@ -3,5 +3,5 @@ export interface Borrow{
     username:string
     bookname:string
     days:number
-    borrowdate:Date
+    borrowdate:String
 }

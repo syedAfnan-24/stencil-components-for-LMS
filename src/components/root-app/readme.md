@@ -16,6 +16,7 @@
 - [client-login](../client-login)
 - [client-signup](../client-signup)
 - [client-home](../client-home)
+- [client-request](../client-request)
 - [admin-login](../admin-login)
 - [admin-signup](../admin-signup)
 - [admin-home](../admin-home)
@@ -23,6 +24,7 @@
 - [client-return](../client-return)
 - [admin-borrow](../admin-borrow)
 - [admin-return](../admin-return)
+- [admin-request](../admin-request)
 
 ### Graph
 ```mermaid
@@ -34,6 +36,7 @@ graph TD;
   root-app --> client-login
   root-app --> client-signup
   root-app --> client-home
+  root-app --> client-request
   root-app --> admin-login
   root-app --> admin-signup
   root-app --> admin-home
@@ -41,6 +44,7 @@ graph TD;
   root-app --> client-return
   root-app --> admin-borrow
   root-app --> admin-return
+  root-app --> admin-request
   style root-app fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

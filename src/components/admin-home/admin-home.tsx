@@ -1,5 +1,5 @@
 import { Component, h, Element, State } from "@stencil/core";
-import { Book } from "./book-interface";
+import { Book } from "../interfaces/book-interface";
 
 @Component({
     tag: "admin-home",

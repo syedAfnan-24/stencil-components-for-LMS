@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-import { Return } from "./return-interface";
+import { Return } from "../interfaces/return-interface";
 
 @Component({
   tag: 'admin-return',

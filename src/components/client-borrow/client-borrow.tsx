@@ -1,7 +1,7 @@
 import { Component, h } from '@stencil/core';
-import { Borrow } from "./borrow-iterface";
-import { Return } from "./return-interface";
-import { Book } from "./book-interface";
+import { Borrow } from "../interfaces/borrow-iterface";
+import { Return } from "../interfaces/return-interface";
+import { Book } from "../interfaces/book-interface";
 
 @Component({
   tag: 'client-borrow',

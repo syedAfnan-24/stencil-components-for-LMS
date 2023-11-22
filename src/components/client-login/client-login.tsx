@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-import { User } from "../client-signup/user-interface";
+import { User } from "../interfaces/user-interface";
 
 @Component({
   tag: 'client-login',
